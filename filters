@@ -21,3 +21,17 @@ SET @sqlQuery = @sqlQuery + ' AND ps.StatusName = ''Active''';
 
 -- Execute the dynamic SQL query
 EXEC sp_executesql @sqlQuery;
+
+
+SELECT c.*, pd.*, p.PaymentStatus
+FROM customers c
+INNER JOIN PolicyDetail pd ON c.CustomerID = pd.CustomerID
+INNER JOIN Premiums p ON pd.PolicyNumber = p.PolicyNumber
+WHERE p.PaymentStatus = 'Paid';
+
+
+SELECT c.*, pd.*, p.PaymentStatus
+FROM customers c
+INNER JOIN PolicyDetail pd ON c.CustomerID = pd.CustomerID
+INNER JOIN Premiums p ON pd.PolicyNumber = p.PolicyNumber
+WHERE p.PaymentStatus = 'unPaid';
