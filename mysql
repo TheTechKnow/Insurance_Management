@@ -3,41 +3,39 @@ CREATE TABLE customers (
     FirstName varchar(100) NOT NULL,
     LastName varchar(100) NOT NULL,
     DOB date NOT NULL,
-    Sex varchar (20),
+    Sex varchar(20),
     MaritalStatus varchar(50),
     EmailID varchar(255),
     PhoneNumber int,
-    PRIMARY KEY (CustomerID));
-
-
-
+    PRIMARY KEY (CustomerID)
+);
 
 INSERT INTO customers (CustomerID, FirstName, LastName, DOB, Sex, MaritalStatus, EmailID, PhoneNumber) 
-VALUES (‘001’, "James", "McBrien", '1991-10-25', "Male", "Single", "mcbrienjimmy25@gmail.com", 5326030085), 
-(‘002’, "Mary", "Bowes", '1983-01-17', "Female", "Married", "mary_bowes83@gmail.com", 7392061752), 
-(‘003’, "Brady", "Andrew", '1996-03-03', "Male", "Married", "iambradyandrew@gmail.com", 8094375617), 
-(‘004’, "Monank", "Yadav", '1977-04-30', "Male", "Married", "monankjyadav@yahoo.com", 4069052853), 
-(‘005’, "Lakshmi", "Mohan", '1994-07-12', "Female", "Single", "lakshmi.mohan_21@hotmail.com", 7395720561), 
-(‘006’, "Destiny", "Moh", '2001-06-08', "Female", "Single", "tinydesmoh6801@gmail.com", 50568391064), 
-(‘007’, "Jonathan", "Davids", '1996-12-28', "Male", "Single", "jodavids17@yahoo.com", 8409472610), 
-(‘008’, "Lupita", "Diaz", '1987-10-25', "Female", "Married", ".lupita.diaz@hotmail.com", 9018471505), 
-(‘009’, "Syed", "Zabiullah", '1991-08-15', "Male", "Single", "zabiullah_syed@gmail.com", 9023861592), 
-(‘010’, "Emmanuel", "Kapoor", '2000-02-24', "Male", "Single", "emmanuellll@gmail.com", 5400481739),  
-(‘011’, "Max”, “Johnson, ‘2001-11-30’, “Male", “Single”, “max_johnson@gmail.com", 5049538207), 
-(‘012’, “Leandre”, “Davies, ’1977-05-05’, "Male", "Married", “leandrefdavies@yahoo.com", 9904582169), 
-(‘013’, “Rebecca”, “Thomas”, '1984-05-25’, "Female", "Single", "rebsythomas321@yahoo.com", 6749302841), 
-(‘014’, "Alan", "Chen", '2004-06-18', "Male", "Single", "thealanchen0618@hotmail.com", 7335693321), 
-(‘015’, "Hope", "Nguyen", '2000-12-02', "Female", "Single", "hopeistheway2@gmail.com", 7074488142), 
-(‘016’, "Diana", "White", '1966-10-13', "Female", "Divorced", "dwhite12345@yahoo.com", 6063994152), 
-(‘017’, “Grace", "Mitchell", '1968-09-20', "Female", "Widowed", "gracykolfman@hotmail.com", 2110509637), 
-(‘018’, "Abdullah", "Shafique", '1996-04-21', "Male", "Single", "abdullahpshafique@gmail.com", 8543122228), 
-(‘019’, "Daniel", "Abrams", '2004-02-29', "Male", "Single", "iamdannyabes@gmail.com", 9007427741), 
-(‘020’, "Laura", "Johnson", '1944-01-15', "Female", "Married", "donna.johnson@gmail.com", 7668481210);
+VALUES ('001', 'James', 'McBrien', '1991-10-25', 'Male', 'Single', 'mcbrienjimmy25@gmail.com', 5326030085), 
+       ('002', 'Mary', 'Bowes', '1983-01-17', 'Female', 'Married', 'mary_bowes83@gmail.com', 7392061752), 
+       ('003', 'Brady', 'Andrew', '1996-03-03', 'Male', 'Married', 'iambradyandrew@gmail.com', 8094375617), 
+       ('004', 'Monank', 'Yadav', '1977-04-30', 'Male', 'Married', 'monankjyadav@yahoo.com', 4069052853), 
+       ('005', 'Lakshmi', 'Mohan', '1994-07-12', 'Female', 'Single', 'lakshmi.mohan_21@hotmail.com', 7395720561), 
+       ('006', 'Destiny', 'Moh', '2001-06-08', 'Female', 'Single', 'tinydesmoh6801@gmail.com', 50568391064), 
+       ('007', 'Jonathan', 'Davids', '1996-12-28', 'Male', 'Single', 'jodavids17@yahoo.com', 8409472610), 
+       ('008', 'Lupita', 'Diaz', '1987-10-25', 'Female', 'Married', '.lupita.diaz@hotmail.com', 9018471505), 
+       ('009', 'Syed', 'Zabiullah', '1991-08-15', 'Male', 'Single', 'zabiullah_syed@gmail.com', 9023861592), 
+       ('010', 'Emmanuel', 'Kapoor', '2000-02-24', 'Male', 'Single', 'emmanuellll@gmail.com', 5400481739),  
+       ('011', 'Max', 'Johnson', '2001-11-30', 'Male', 'Single', 'max_johnson@gmail.com', 5049538207), 
+       ('012', 'Leandre', 'Davies', '1977-05-05', 'Male', 'Married', 'leandrefdavies@yahoo.com', 9904582169), 
+       ('013', 'Rebecca', 'Thomas', '1984-05-25', 'Female', 'Single', 'rebsythomas321@yahoo.com', 6749302841), 
+       ('014', 'Alan', 'Chen', '2004-06-18', 'Male', 'Single', 'thealanchen0618@hotmail.com', 7335693321), 
+       ('015', 'Hope', 'Nguyen', '2000-12-02', 'Female', 'Single', 'hopeistheway2@gmail.com', 7074488142), 
+       ('016', 'Diana', 'White', '1966-10-13', 'Female', 'Divorced', 'dwhite12345@yahoo.com', 6063994152), 
+       ('017', 'Grace', 'Mitchell', '1968-09-20', 'Female', 'Widowed', 'gracykolfman@hotmail.com', 2110509637), 
+       ('018', 'Abdullah', 'Shafique', '1996-04-21', 'Male', 'Single', 'abdullahpshafique@gmail.com', 8543122228), 
+       ('019', 'Daniel', 'Abrams', '2004-02-29', 'Male', 'Single', 'iamdannyabes@gmail.com', 9007427741), 
+       ('020', 'Laura', 'Johnson', '1944-01-15', 'Female', 'Married', 'donna.johnson@gmail.com', 7668481210);
 
 CREATE TABLE PolicyDetail (
     PolicyNumber VARCHAR(10) PRIMARY KEY,
-    CustomerID VARCHAR(10) REFERENCES Customer(CustomerID),
-    PolicyStatus VARCHAR(20) REFERENCES PolicyStatus(StatusName)
+    CustomerID VARCHAR(10) REFERENCES customers(CustomerID),
+    PolicyStatus VARCHAR(20) REFERENCES PolicyStatus(StatusName),
     Type VARCHAR(20),
     Number INT,
     CarrierName VARCHAR(50)
@@ -84,36 +82,14 @@ VALUES
 CREATE TABLE Premiums (
     PremiumID INT PRIMARY KEY,
     PolicyNumber VARCHAR(50),
-    CustomerID INT,
+    CustomerID INT REFERENCES customers(CustomerID),
     PremiumAmount DECIMAL(10, 2),
     PremiumDueDate DATE,
     PaymentStatus VARCHAR(20),
     PolicyType VARCHAR(50),
-    FOREIGN KEY (PolicyNumber) REFERENCES PolicyDetail(PolicyNumber)  
-    PolicyStatus VARCHAR(20) REFERENCES PolicyStatus(StatusName)
+    FOREIGN KEY (PolicyNumber) REFERENCES PolicyDetail(PolicyNumber),
+    FOREIGN KEY (PolicyStatus) REFERENCES PolicyStatus(StatusName) 
 );
-
-INSERT INTO Premiums (PremiumID, PolicyNumber, CustomerID, PremiumAmount, PremiumDueDate, PaymentStatus, PolicyType) VALUES
-(1, '001', 001, 300.00, '2024-05-01', 'Paid', 'Auto'),
-(2, '0001', 002, 250.00, '2024-06-01', 'Unpaid', 'Home'),
-(3, '00001', 003, 450.00, '2024-05-15', 'Paid', 'Umbrella'),
-(4, '002', 004, 500.00, '2024-06-15', 'Unpaid', 'Auto'),
-(5, '0002', 005, 200.00, '2024-05-10', 'Paid', 'Home'),
-(6, '00002', 006, 350.00, '2024-06-20', 'Unpaid', 'Umbrella'),
-(7, '003', 007, 220.00, '2024-05-25', 'Paid', 'Auto'),
-(8, '0003', 008, 330.00, '2024-06-25', 'Unpaid', 'Home'),
-(9, '00003', 009, 400.00, '2024-05-05', 'Paid', 'Umbrella'),
-(10, '004', 010, 260.00, '2024-06-05', 'Unpaid', 'Auto'),
-(11, '0004', 011, 420.00, '2024-05-20', 'Paid', 'Home'),
-(12, '00004', 012, 210.00, '2024-06-10', 'Unpaid', 'Umbrella'),
-(13, '005', 013, 290.00, '2024-05-30', 'Paid', 'Auto'),
-(14, '0005', 014, 360.00, '2024-06-30', 'Unpaid', 'Home'),
-(15, '00005', 015, 480.00, '2024-05-02', 'Paid', 'Umbrella'),
-(16, '006', 016, 270.00, '2024-06-02', 'Unpaid', 'Auto'),
-(17, '0006', 017, 310.00, '2024-05-12', 'Paid', 'Home'),
-(18, '00006', 018, 240.00, '2024-06-12', 'Unpaid', 'Umbrella'),
-(19, '007', 019, 440.00, '2024-05-22', 'Paid', 'Auto'),
-(20, '0007', 020, 520.00, '2024-06-22', 'Unpaid', 'Home');
 
 CREATE TABLE PolicyStatus (
     StatusID INT PRIMARY KEY,
@@ -125,5 +101,3 @@ VALUES
     (1, 'Active'),
     (2, 'Inactive'),
     (3, 'Cancelled');
-
-
