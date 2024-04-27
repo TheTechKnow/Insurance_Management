@@ -88,8 +88,32 @@ CREATE TABLE Premiums (
     PaymentStatus VARCHAR(20),
     PolicyType VARCHAR(50),
     FOREIGN KEY (PolicyNumber) REFERENCES PolicyDetail(PolicyNumber),
-    -- FOREIGN KEY (PolicyStatus) REFERENCES PolicyStatus(StatusName) -- Only if PolicyStatus is moved to Premiums table
+    -- FOREIGN KEY (PolicyStatus) REFERENCES PolicyStatus(StatusName)
 );
+
+INSERT INTO Premiums (PremiumID, PolicyNumber, CustomerID, PremiumAmount, PremiumDueDate, PaymentStatus, PolicyType)
+VALUES
+    (1, '001', '001', 500.00, '2024-04-30', 'Paid', 'auto'),
+    (2, '0001', '002', 700.00, '2024-05-15', 'Unpaid', 'home'),
+    (3, '00001', '003', 300.00, '2024-05-20', 'Paid', 'umbrella'),
+    (4, '002', '004', 550.00, '2024-04-25', 'Paid', 'auto'),
+    (5, '0002', '005', 800.00, '2024-05-10', 'Unpaid', 'home'),
+    (6, '00002', '006', 400.00, '2024-05-05', 'Paid', 'umbrella'),
+    (7, '003', '007', 600.00, '2024-04-28', 'Paid', 'auto'),
+    (8, '0003', '008', 750.00, '2024-05-12', 'Unpaid', 'home'),
+    (9, '00003', '009', 350.00, '2024-05-18', 'Paid', 'umbrella'),
+    (10, '004', '010', 600.00, '2024-04-27', 'Paid', 'auto'),
+    (11, '0004', '011', 850.00, '2024-05-08', 'Unpaid', 'home'),
+    (12, '00004', '012', 450.00, '2024-05-22', 'Paid', 'umbrella'),
+    (13, '005', '013', 700.00, '2024-04-29', 'Paid', 'auto'),
+    (14, '0005', '014', 900.00, '2024-05-18', 'Unpaid', 'home'),
+    (15, '00005', '015', 500.00, '2024-05-25', 'Paid', 'umbrella'),
+    (16, '006', '016', 550.00, '2024-04-26', 'Paid', 'auto'),
+    (17, '0006', '017', 750.00, '2024-05-14', 'Unpaid', 'home'),
+    (18, '00006', '018', 350.00, '2024-05-16', 'Paid', 'umbrella'),
+    (19, '007', '019', 600.00, '2024-04-28', 'Paid', 'auto'),
+    (20, '0007', '020', 800.00, '2024-05-11', 'Unpaid', 'home');
+
 
 CREATE TABLE PolicyStatus (
     StatusID INT PRIMARY KEY,
