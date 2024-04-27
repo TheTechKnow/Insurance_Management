@@ -113,4 +113,27 @@ INSERT INTO Premiums (PremiumID, PolicyNumber, CustomerID, PremiumAmount, Premiu
 (19, '007', 019, 440.00, '2024-05-22', 'Paid', 'Auto'),
 (20, '0007', 020, 520.00, '2024-06-22', 'Unpaid', 'Home');
 
+CREATE TABLE PolicyStatus (
+    StatusID INT PRIMARY KEY,
+    StatusName VARCHAR(20)
+);
+
+INSERT INTO PolicyStatus (StatusID, StatusName)
+VALUES
+    (1, 'Active'),
+    (2, 'Inactive'),
+    (3, 'Cancelled');
+
+CREATE TABLE Premiums (
+    PremiumID INT PRIMARY KEY,
+    PolicyNumber VARCHAR(50),
+    CustomerID INT,
+    PremiumAmount DECIMAL(10, 2),
+    PremiumDueDate DATE,
+    PaymentStatus VARCHAR(20),
+    PolicyType VARCHAR(50),
+    PolicyStatusID INT,
+    FOREIGN KEY (PolicyNumber) REFERENCES PolicyDetail(PolicyNumber),
+    FOREIGN KEY (PolicyStatusID) REFERENCES PolicyStatus(StatusID)
+);
 
