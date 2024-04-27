@@ -1,0 +1,23 @@
+for active policies:
+
+DECLARE @sqlQuery NVARCHAR(MAX);
+SET @sqlQuery = 'SELECT c.*, pd.*, ps.StatusName AS PolicyStatusName 
+                 FROM customers c
+                 INNER JOIN PolicyDetail pd ON c.CustomerID = pd.CustomerID
+                 INNER JOIN PolicyStatus ps ON pd.PolicyStatus = ps.StatusName
+                 WHERE 1 = 1';
+
+-- Add filter conditions based on user input
+IF @firstName IS NOT NULL
+    SET @sqlQuery = @sqlQuery + ' AND c.FirstName LIKE ''%' + @firstName + '%''';
+IF @lastName IS NOT NULL
+    SET @sqlQuery = @sqlQuery + ' AND c.LastName LIKE ''%' + @lastName + '%''';
+IF @dob IS NOT NULL
+    SET @sqlQuery = @sqlQuery + ' AND c.DOB = ''' + CONVERT(VARCHAR(10), @dob, 120) + '''';
+-- Add more filter conditions as needed
+
+-- Add filter for active policies
+SET @sqlQuery = @sqlQuery + ' AND ps.StatusName = ''Active''';
+
+-- Execute the dynamic SQL query
+EXEC sp_executesql @sqlQuery;
