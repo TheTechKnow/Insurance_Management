@@ -42,28 +42,28 @@ CREATE TABLE PolicyDetail (
     CarrierName VARCHAR(50)
 );
 
-INSERT INTO PolicyDetail (PolicyNumber, CustomerID, Type, CarrierName)
+INSERT INTO PolicyDetail (PolicyNumber, CustomerID, Type, CarrierName, PolicyStatus)
 VALUES 
-    ('001', '001', 'auto', 'Safeco'),
-    ('0001', '002', 'home', 'Nationwide'),
-    ('00001', '003', 'umbrella', 'Farmers'),
-    ('002', '004', 'auto', 'National General'),
-    ('0002', '005', 'home', 'CSE'),
-    ('00002', '006', 'umbrella', 'Safeco'),
-    ('003', '007', 'auto', 'Nationwide'),
-    ('0003', '008', 'home', 'Farmers'),
-    ('00003', '009', 'umbrella', 'National General'),
-    ('004', '010', 'auto', 'CSE'),
-    ('0004', '011', 'home', 'Safeco'),
-    ('00004', '012', 'umbrella', 'Nationwide'),
-    ('005', '013', 'auto', 'Farmers'),
-    ('0005', '014', 'home', 'National General'),
-    ('00005', '015', 'umbrella', 'CSE'),
-    ('006', '016', 'auto', 'Safeco'),
-    ('0006', '017', 'home', 'Nationwide'),
-    ('00006', '018', 'umbrella', 'Farmers'),
-    ('007', '019', 'auto', 'National General'),
-    ('0007', '020', 'home', 'CSE');
+    ('001', '001', 'auto', 'Safeco', 'Active'),
+    ('0001', '002', 'home', 'Nationwide', 'Active'),
+    ('00001', '003', 'umbrella', 'Farmers', 'Active'),
+    ('002', '004', 'auto', 'National General', 'Active'),
+    ('0002', '005', 'home', 'CSE', 'Active'),
+    ('00002', '006', 'umbrella', 'Safeco', 'Active'),
+    ('003', '007', 'auto', 'Nationwide', 'Active'),
+    ('0003', '008', 'home', 'Farmers', 'Active'),
+    ('00003', '009', 'umbrella', 'National General', 'Active'),
+    ('004', '010', 'auto', 'CSE', 'Active'),
+    ('0004', '011', 'home', 'Safeco', 'Active'),
+    ('00004', '012', 'umbrella', 'Nationwide', 'Active'),
+    ('005', '013', 'auto', 'Farmers', 'Active'),
+    ('0005', '014', 'home', 'National General', 'Active'),
+    ('00005', '015', 'umbrella', 'CSE', 'Active'),
+    ('006', '016', 'auto', 'Safeco', 'Active'),
+    ('0006', '017', 'home', 'Nationwide', 'Active'),
+    ('00006', '018', 'umbrella', 'Farmers', 'Active'),
+    ('007', '019', 'auto', 'National General', 'Active'),
+    ('0007', '020', 'home', 'CSE', 'Active');
 
 CREATE TABLE Carrier (
     CarrierID VARCHAR(9) PRIMARY KEY,
