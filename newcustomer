@@ -1,0 +1,53 @@
+CREATE PROCEDURE IssuePolicy(
+    IN p_FirstName VARCHAR(100),
+    IN p_LastName VARCHAR(100),
+    IN p_DOB DATE,
+    IN p_Sex VARCHAR(20),
+    IN p_MaritalStatus VARCHAR(50),
+    IN p_EmailID VARCHAR(255),
+    IN p_PhoneNumber INT,
+    IN p_Type VARCHAR(20),
+    IN p_CarrierName VARCHAR(50),
+    OUT p_ResultMessage VARCHAR(255)
+)
+BEGIN
+   
+    DECLARE existingCustomer INT;
+    SELECT COUNT(*) INTO existingCustomer FROM customers WHERE EmailID = p_EmailID;
+    
+    IF existingCustomer > 0 THEN
+       
+        DECLARE existingCustomerID VARCHAR(10);
+        SELECT CustomerID INTO existingCustomerID FROM customers WHERE EmailID = p_EmailID;
+    ELSE
+        
+        INSERT INTO customers (FirstName, LastName, DOB, Sex, MaritalStatus, EmailID, PhoneNumber)
+        VALUES (p_FirstName, p_LastName, p_DOB, p_Sex, p_MaritalStatus, p_EmailID, p_PhoneNumber);
+        
+        
+        SELECT LAST_INSERT_ID() INTO existingCustomerID;
+    END IF;
+
+   
+    DECLARE existingPolicyStatus INT;
+    SELECT COUNT(*) INTO existingPolicyStatus FROM PolicyStatus WHERE StatusName = 'Active';
+
+    IF existingPolicyStatus > 0 THEN
+       
+        DECLARE existingPolicyStatusID INT;
+        SELECT StatusID INTO existingPolicyStatusID FROM PolicyStatus WHERE StatusName = 'Active';
+    ELSE
+       
+        INSERT INTO PolicyStatus (StatusName) VALUES ('Active');
+        
+      
+        SELECT LAST_INSERT_ID() INTO existingPolicyStatusID;
+    END IF;
+
+    
+    INSERT INTO PolicyDetail (CustomerID, PolicyStatus, Type, CarrierName)
+    VALUES (existingCustomerID, existingPolicyStatusID, p_Type, p_CarrierName);
+
+    
+    SET p_ResultMessage = 'Policy issued successfully for customer.';
+END;
