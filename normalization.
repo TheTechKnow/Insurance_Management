@@ -1,0 +1,50 @@
+--3NF
+
+CREATE TABLE Policy (
+    PolicyNumber VARCHAR(10) PRIMARY KEY,
+    PolicyStatus VARCHAR(20) REFERENCES PolicyStatus(StatusName),
+    Type VARCHAR(20),
+    Number INT,
+    CarrierID VARCHAR(9) REFERENCES Carrier(CarrierID)
+);
+
+
+CREATE TABLE CustomerPolicy (
+    CustomerID VARCHAR(10) REFERENCES customers(CustomerID),
+    PolicyNumber VARCHAR(10) REFERENCES Policy(PolicyNumber),
+    PRIMARY KEY (CustomerID, PolicyNumber)
+);
+
+
+ALTER TABLE PolicyDetail DROP COLUMN CustomerID;
+
+
+ALTER TABLE PolicyDetail DROP COLUMN PolicyStatus;
+
+
+ALTER TABLE PolicyDetail DROP COLUMN Type;
+ALTER TABLE PolicyDetail DROP COLUMN Number;
+ALTER TABLE PolicyDetail DROP COLUMN CarrierName;
+
+
+4th form
+
+
+ALTER TABLE PolicyDetail DROP COLUMN CustomerID;
+
+
+CREATE TABLE PolicyCustomer (
+    PolicyNumber VARCHAR(10) REFERENCES Policy(PolicyNumber),
+    CustomerID VARCHAR(10) REFERENCES customers(CustomerID),
+    PRIMARY KEY (PolicyNumber, CustomerID)
+);
+
+
+ALTER TABLE Premiums DROP COLUMN CustomerID;
+
+
+CREATE TABLE PremiumCustomer (
+    PremiumID INT REFERENCES Premiums(PremiumID),
+    CustomerID VARCHAR(10) REFERENCES customers(CustomerID),
+    PRIMARY KEY (PremiumID, CustomerID)
+);
