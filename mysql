@@ -90,6 +90,7 @@ CREATE TABLE Premiums (
     PaymentStatus VARCHAR(20),
     PolicyType VARCHAR(50),
     FOREIGN KEY (PolicyNumber) REFERENCES PolicyDetail(PolicyNumber)  
+    PolicyStatus VARCHAR(20) REFERENCES PolicyStatus(StatusName)
 );
 
 INSERT INTO Premiums (PremiumID, PolicyNumber, CustomerID, PremiumAmount, PremiumDueDate, PaymentStatus, PolicyType) VALUES
@@ -125,16 +126,4 @@ VALUES
     (2, 'Inactive'),
     (3, 'Cancelled');
 
-CREATE TABLE Premiums (
-    PremiumID INT PRIMARY KEY,
-    PolicyNumber VARCHAR(50),
-    CustomerID INT,
-    PremiumAmount DECIMAL(10, 2),
-    PremiumDueDate DATE,
-    PaymentStatus VARCHAR(20),
-    PolicyType VARCHAR(50),
-    PolicyStatusID INT,
-    FOREIGN KEY (PolicyNumber) REFERENCES PolicyDetail(PolicyNumber),
-    FOREIGN KEY (PolicyStatusID) REFERENCES PolicyStatus(StatusID)
-);
 
