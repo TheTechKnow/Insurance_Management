@@ -82,13 +82,13 @@ VALUES
 CREATE TABLE Premiums (
     PremiumID INT PRIMARY KEY,
     PolicyNumber VARCHAR(50),
-    CustomerID INT REFERENCES customers(CustomerID),
+    CustomerID VARCHAR(10) REFERENCES customers(CustomerID),
     PremiumAmount DECIMAL(10, 2),
     PremiumDueDate DATE,
     PaymentStatus VARCHAR(20),
     PolicyType VARCHAR(50),
     FOREIGN KEY (PolicyNumber) REFERENCES PolicyDetail(PolicyNumber),
-    FOREIGN KEY (PolicyStatus) REFERENCES PolicyStatus(StatusName) 
+    -- FOREIGN KEY (PolicyStatus) REFERENCES PolicyStatus(StatusName) -- Only if PolicyStatus is moved to Premiums table
 );
 
 CREATE TABLE PolicyStatus (
