@@ -16,7 +16,7 @@ class memberConnect:
         self.connection = pymysql.connect(
             host="localhost",
             user="root",
-            password="Kingmaker@2130",
+            password="",
             database="insurance_management"
         )
 
