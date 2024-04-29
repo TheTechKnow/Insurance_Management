@@ -135,3 +135,10 @@ INSERT INTO Premiums (PremiumID, PolicyNumber, CustomerID, PremiumAmount, Premiu
     (19, '007', '019', 600.00, '2024-04-28', 'Paid', 'auto', 'Active'),
     (20, '0007', '020', 800.00, '2024-05-11', 'Unpaid', 'home', 'Active');
 
+ALTER TABLE PolicyDetail DROP COLUMN PolicyStatus;
+
+UPDATE Premiums AS p
+JOIN PolicyDetail AS pd ON p.PolicyNumber = pd.PolicyNumber
+SET p.PolicyStatus = pd.PolicyStatus;
+
+
