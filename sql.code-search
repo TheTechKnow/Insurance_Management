@@ -1,0 +1,10 @@
+# Query: sql
+# ContextLines: 1
+
+CREATE TABLE PolicyDetail (
+    PolicyNumber VARCHAR(10) PRIMARY KEY,
+    CustomerID VARCHAR(10) REFERENCES Customer(CustomerID),
+    Type VARCHAR(20),
+    Number INT,
+    CarrierName VARCHAR(50)
+);
