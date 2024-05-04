@@ -5,7 +5,7 @@ Steps to run the apllication successfully.
 Download the the.py file and open in vscode.
 Download the sql file insurance_data and make sure that you open and activate the file in the sql as this application uses so it is important that the database file is open and activated in the system.
 
-After that, in vscode undet the database_connection, please put the host, user name, password and database name.
+After that, in vscode in the method database_connection, please put the host, user name, password and database name.
 password="",
 database=""
 
