@@ -1,6 +1,6 @@
 # Insurance_Management
 
-Steps to run the apllication successfully.
+Steps to run the application successfully.
 
 Download the the.py file and open in vscode.
 Download the sql file insurance_data and make sure that you open and activate the file in the sql as this application uses so it is important that the database file is open and activated in the system.
